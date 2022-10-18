@@ -17,6 +17,13 @@ View(fertility)
 # length(fertility[,'educ'])
 
 describe(fertility)$mean[c(1,4:6)]
+describe(fertility)
+describe(fertility)$n[c(1,4:6)]
+describe(fertility)$mean[c(1,4:6)]
+describe(fertility)$sd[c(1,4:6)]
+describe(fertility)$min[c(1,4:6)]
+describe(fertility)$max[c(1,4:6)]
+
 summary(fertility)
 skim(fertility)
 
