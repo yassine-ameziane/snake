@@ -5,3 +5,7 @@ abline(lin)
 
 summary(lin)
 lin$coefficients
+
+lin2 = lm(kids ~ educ + black + east + northcen + west + farm + othrural + town + smcity, data = fertility)
+lin
+lin2
