@@ -12,7 +12,6 @@ library('psych')
 
 fertility = read.csv("fertility.csv")
 View(fertility)
-66
 
 # colMeans(fertility)
 # length(fertility[,'educ'])
