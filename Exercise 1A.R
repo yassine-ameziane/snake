@@ -16,7 +16,8 @@ View(fertility)
 # colMeans(fertility)
 # length(fertility[,'educ'])
 
-describe(fertility)
+description = describe(fertility)
+description
 describe(fertility)$n[c(1,4:6)]
 describe(fertility)$mean[c(1,4:6)]
 describe(fertility)$sd[c(1,4:6)]
