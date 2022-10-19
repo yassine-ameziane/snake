@@ -18,7 +18,11 @@ lin
 lin2
 lin3
 
-## twee kk D
+## twee kk D (niet af!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!)
 fertility$dummy = factor(fertility$year, levels = c("2002", "2004", "2006", "2008", "2010", "2012", "2014"), labels = c("2002", "2004", "2006", "2008", "2010", "2012", "2014"))
 lin4 = lm(kids ~ educ + black + east + northcen + west + farm + othrural + town + smcity + dummy, data = fertility)
 lin4
+
+fertility$pred = predict(lin4, fertility)
+
+plot(x = c(1:1129), y = fertility[,"pred"])
