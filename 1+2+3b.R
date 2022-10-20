@@ -32,6 +32,8 @@ skim(fertility)
 groupedby_fertility = fertility %>% group_by(year) %>% summarise(mean_number_of_children = mean(kids))
 plot(groupedby_fertility ,main="Mean number of children between 2002-2014", xlab="Years",
      ylab="Mean number of children")
+# lin0 = lm(groupedby_fertility$mean_number_of_children ~ groupedby_fertility$year)
+# abline(lin0)
 
 #1c
 grouped_fertility = fertility %>% group_by(year) %>% summarise(educ= mean(educ))
