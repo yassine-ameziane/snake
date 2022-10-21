@@ -32,8 +32,10 @@ skim(fertility)
 groupedby_fertility = fertility %>% group_by(year) %>% summarise(mean_number_of_children = mean(kids))
 plot(groupedby_fertility ,main="Mean number of children between 2002-2014", xlab="Years",
      ylab="Mean number of children")
-# lin0 = lm(groupedby_fertility$mean_number_of_children ~ groupedby_fertility$year)
-# abline(lin0)
+lines(groupedby_fertility ,main="Mean number of children between 2002-2014", xlab="Years",
+     ylab="Mean number of children")
+lin0 = lm(groupedby_fertility$mean_number_of_children ~ groupedby_fertility$year)
+abline(lin0)
 
 #1c
 grouped_fertility = fertility %>% group_by(year) %>% summarise(educ= mean(educ))
@@ -48,6 +50,8 @@ abline(lin)
 summary(lin)
 lin$coefficients
 
+par(mfrow = c(2, 2))
+plot(lin)
 ### 2 B
 lin2 = lm(kids ~ educ + black + east + northcen + west + farm + othrural + town + smcity, data = fertility)
 lin
@@ -77,6 +81,10 @@ for (number in educ_unique){
   }
 }
 
+fertility$dummies = educ_levels
+
 ln4 = lm(kids ~ educ_levels + black + east + northcen + west + farm + othrural + town + smcity + Year_, data=fertility)
 summary(ln4)
-
+View(fertility)
+plot(y = ln4$residuals, x = fertility$kids)
+ln4$coefficients
